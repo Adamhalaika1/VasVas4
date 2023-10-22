@@ -1,0 +1,41 @@
+﻿@model ProfileFormViewModel
+@{
+    ViewData["Title"] = "Edit New User";
+
+
+
+}
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id"/>
+    <h2>تعديل بيانات المستخدم</h2>
+    <hr />
+    @*     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    *@    <div class="form-floating">
+        <input asp-for="CompanyName" class="form-control" autocomplete="username" aria-required="true" />
+        <label asp-for="CompanyName"></label>
+        <span asp-validation-for="CompanyName" class="text-danger"></span>
+    </div>
+    <div class="form-floating">
+        <input asp-for="SmsIdName" class="form-control" autocomplete="username" aria-required="true" />
+        <label asp-for="SmsIdName"></label>
+        <span asp-validation-for="SmsIdName" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating">
+        <input asp-for="Email" class="form-control" autocomplete="username" aria-required="true" />
+        <label asp-for="Email"></label>
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating">
+        <input asp-for="PhoneNumber" class="form-control" autocomplete="username" aria-required="true" />
+        <label asp-for="PhoneNumber"></label>
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">تسجيل</button>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+            }
+
+

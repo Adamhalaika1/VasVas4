@@ -1,0 +1,53 @@
+﻿@model IEnumerable<UserViewModel>
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h1>الشركات</h1>
+<a asp-action="Add" class="btn btn-primary"> أضافة مستخدم جديد</a>
+
+<table class="table table-striped mt-4">
+    <thead>
+        <tr class="bg-primary text-white">
+            <th>اسم الشركة</th>
+            <th>اسم المعرف</th>
+            <th>رقم الموبايل</th>
+            <th>اسم نقطة الأتصال</th>
+            <th>تعديل البيانات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.CompanyName</td>
+                <td>@user.SmsIdName</td>
+                <td>@user.PhoneNumber</td>
+                <td>@user.Email</td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-conroller="Users" asp-action="Edit" asp-route-userId="@user.Id">تعديل</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
